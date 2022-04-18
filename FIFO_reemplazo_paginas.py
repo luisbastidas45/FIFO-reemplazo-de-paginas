@@ -11,11 +11,12 @@ for i in borrador:
 
 num_entrada = len(entrada)     #numero de datos(puede servir para el numero de columnas)
 filas = int(input("Ingrese el numero de filas con las que desea trabajar: "))
+print("\n")
 
 
 
 def paginaFallas(entrada, num_entrada, filas):
-    print("paginas")
+    print("\n","paginas")
     s = set()   #creamos un nuevo conjunto sin elementos
     queue = Queue()  #creamos la variable para el uso de la cola
 
@@ -60,11 +61,13 @@ def paginaFallas(entrada, num_entrada, filas):
 
         
         for q_item in queue.queue:
-            print(q_item, end="\t")
-
+            print("|",q_item,"|",end="\t")
+            
         print()
     return pagina_fallas
 
+for i in range(num_entrada):
+    print("|",entrada[i],"|",end="\t")
 
 pagina_fallas = paginaFallas(entrada, num_entrada, filas)
 print("\nFallos de pagina: ", pagina_fallas)
